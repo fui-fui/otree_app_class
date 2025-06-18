@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %} {% load otree static %} {% block title %}
+実験結果の概要 {% endblock %} {% block content %}
+
+<h4>あなたの配分結果</h4>
+<p>あなたは、以下のようにポイントを配分しました。</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>相手</th>
+      <th>相性スコア</th>
+      <th>あなたが配分した額</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for res in results %}
+    <tr>
+      <td>{{ res.npc }}</td>
+      <td>{{ res.similarity }}%</td>
+      <td>{{ res.amount }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<hr />
+<p>ご協力ありがとうございました。以上でこの実験はすべて終了です。</p>
+<p>このウィンドウは閉じて構いません。</p>
+
+{% endblock %}

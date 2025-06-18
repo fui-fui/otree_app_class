@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %} {% load otree static %} {% block title %}
+分析結果 {% endblock %} {% block content %}
+
+<div class="card bg-light">
+  <div class="card-body">
+    <h4 class="card-title">あなたの傾向</h4>
+    <p>あなたのRWAスコアの合計は <strong>{{ score }}</strong> 点でした。</p>
+    <h5>傾向: {{ label }}</h5>
+    <p>{{ description }}</p>
+  </div>
+</div>
+
+<br />
+
+<p>
+  次に、この結果に基づいて、事前に設定された他の人たちとの相性を確認します。
+</p>
+
+{% next_button %} {% endblock %}

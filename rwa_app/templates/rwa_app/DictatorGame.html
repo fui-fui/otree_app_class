@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %} {% load otree static %} {% block title %}
+配分ゲーム {% endblock %} {% block content %}
+
+<p>
+  あなたは、<strong>{{ npc.id }}</strong>（相性スコア: {{ npc.similarity
+  }}%）に、 ポイントを配分します。
+</p>
+<p>
+  あなたと{{ npc.id }}に配分されるポイントの合計は100ポイントです。あなたが{{
+  npc.id }}に配分しなかった残りが、あなたの取り分になります。
+</p>
+
+{% formfields %} {% next_button %} {% endblock %}

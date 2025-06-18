@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %} {% load otree static %} {% block title %}
+相性診断の結果 {% endblock %} {% block content %}
+
+<p>あなたと、事前に設定された他の人たちとの考え方の相性は以下の通りです。</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>相手</th>
+      <th>相性スコア</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for match in matches %}
+    <tr>
+      <td>{{ match.id }}</td>
+      <td>{{ match.similarity }}%</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<p>次に、この人たちにポイントを配分するゲーム（配分ゲーム）を行います。</p>
+
+{% next_button %} {% endblock %}
